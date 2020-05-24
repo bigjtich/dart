@@ -1,6 +1,6 @@
 import 'package:http/http.dart' as http;
 
-var url = 'https://example.com/whatsit/create';
+var url = 'https://example.com/';
 
 Future<String> getHttp() async {
   var response = await http.post(url, body: {'name' : 'doodle', 'color' : 'blue'});
@@ -8,14 +8,12 @@ Future<String> getHttp() async {
   print('Response status: ${response.statusCode}');
   print('Response body: ${response.body}');
 
-  print(await http.read('https://example.com/foobar.txt'));
+  print(await http.read(url));
 
-  // what is problem?
+  return null;
 }
 
 void main(List<String> arguments) {
-  print('Hello world!');
-
   getHttp();
 }
 
