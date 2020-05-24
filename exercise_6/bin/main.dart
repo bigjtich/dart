@@ -1,8 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'package:html/parser.dart' show parse;
-import 'package:html/dom.dart';
 
-var url = "https://example.com";
+var url = 'https://example.com';
 
 Future<String> getHttp() async {
   var html = await http.read(url);
@@ -13,7 +12,7 @@ void main(List<String> arguments) async {
   var html = await getHttp();
   
   var document = parse(html);
-  var title = document.querySelector("title").innerHtml;
+  var title = document.querySelector('title').innerHtml;
 
   print(title);
 
